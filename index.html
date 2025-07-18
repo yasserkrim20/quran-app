@@ -45,7 +45,7 @@
             useEffect(() => {
                 if (selectedSurah) {
                     setLoading(true);
-                    fetch(`http://api.alquran.cloud/v1/surah/${selectedSurah}/${translation}`)
+                    fetch('https://cors-anywhere.herokuapp.com/http://api.alquran.cloud/v1/quran/ar')
                         .then(res => {
                             if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
                             return res.json();
@@ -63,7 +63,7 @@
 
             // Fetch Prayer Times
             useEffect(() => {
-                fetch('http://api.aladhan.com/v1/timingsByCity?city=Mecca&country=Saudi%20Arabia')
+                fetch('https://cors-anywhere.herokuapp.com/http://api.aladhan.com/v1/timingsByCity?city=Mecca&country=Saudi%20Arabia')
                     .then(res => {
                         if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
                         return res.json();
